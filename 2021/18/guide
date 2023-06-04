@@ -1,0 +1,2 @@
+input.txt sample1.txt sample2.txt sample3.txt sample4.txt snailfish.cpp
+^timely 'make snailfish && ./snailfish <sample1.txt'
