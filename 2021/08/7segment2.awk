@@ -1,15 +1,15 @@
 #!/usr/bin/awk -f
 
-function contains(s, p) {
-	for (pos = length(p); pos > 0; pos--) {
-		if (index(s, substr(p, pos, 1)) == 0) {
+function contains(s, p,    i) {
+	for (i = length(p); i > 0; i--) {
+		if (index(s, substr(p, i, 1)) == 0) {
 			return 0
 		}
 	}
 	return  1
 }
 
-function find(n) {
+function find(n,    i, l) {
 	for (i = 1; i <= 10; i++) {
 		l = length($i)
 		if ((n == 1 && l == 2) ||
@@ -28,7 +28,7 @@ function find(n) {
 	}
 }
 
-function decode(s) {
+function decode(s,    n, d) {
 	for (n in digits) {
 		d = digits[n]
 		if (length(d) == length(s) && contains(d, s)) {

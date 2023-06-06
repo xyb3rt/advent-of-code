@@ -1,8 +1,6 @@
 #!/usr/bin/awk -f
 
-function score(board, draw) {
-	sum = 0
-	win = 0
+function score(board, draw,    sum, win, row, col, nmarkcol, nmarkrow, num) {
 	split("", nmarkcol)
 	for (row = 1; row <= nrow; row++) {
 		nmarkrow = 0

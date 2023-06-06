@@ -1,6 +1,6 @@
 #!/usr/bin/awk -f
 
-function line(x1, x2, y1, y2) {
+function line(x1, y1, x2, y2,    x, y) {
 	x = x1
 	y = y1
 	for (;;) {
@@ -33,7 +33,7 @@ BEGIN {
 	if (maxy < y2) {
 		maxy = y2
 	}
-	line(x1, x2, y1, y2)
+	line(x1, y1, x2, y2)
 }
 
 END {
