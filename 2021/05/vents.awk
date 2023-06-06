@@ -4,7 +4,10 @@ function line(x1, y1, x2, y2,    x, y) {
 	x = x1
 	y = y1
 	for (;;) {
-		cell[x, y]++
+		if (x1 == x2 || y1 == y2) {
+			cell1[x, y]++
+		}
+		cell2[x, y]++
 		if (x == x2 && y == y2) {
 			break
 		}
@@ -39,10 +42,14 @@ BEGIN {
 END {
 	for (x = 0; x <= maxx; x++) {
 		for (y = 0; y <= maxy; y++) {
-			if (cell[x, y] > 1) {
-				num++
+			if (cell1[x, y] > 1) {
+				num1++
+			}
+			if (cell2[x, y] > 1) {
+				num2++
 			}
 		}
 	}
-	print(num)
+	print(num1)
+	print(num2)
 }
